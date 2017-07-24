@@ -76,6 +76,12 @@ scope "(:locale)", locale: /en|it/ do
   root to: 'welcome#index'
 end
 ```
+If you want to make Italian your default language for the application. Just update your config/application.rb
+
+```
+ config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+ config.i18n.default_locale = :it 
+```
 
 For other solutions, like setting the locale from the domain name or getting an user language from the database, please see the official [guide](http://edgeguides.rubyonrails.org/i18n.html#managing-the-locale-across-requests).
 
